@@ -35,18 +35,17 @@ Each project will have its own **folder**, documentation,READMEs and source code
 java-industry-projects
 │
 ├── Project-1
-│   ├── (Coming soon)
-│   └── README.md (Coming soon)   ← describes Project 1
+│   ├── src
+│   └── README.md   ← describes Project 1
 │
 ├── Project-2
-│   ├── (Coming soon)
-│   └── README.md (Coming soon)   ← describes Project 2
+│   ├── src
+│   └── README.md   ← describes Project 2
 │
 ├── Project-3
-│   ├── (Coming soon)
-│   └── README.md (Coming soon)  ← describes Project 3
+│   ├── src
+│   └── README.md   ← describes Project 3
 │
-├── MIT License
 └── README.md       ← describes the whole repository
 
 
