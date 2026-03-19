@@ -65,7 +65,7 @@ Through these projects I aim to strengthen:
 ## Collaborators
 
 | Role | Name | GitHub |
-|-------|--------|-------------|--------|
+|-------|--------|-------------|
 | Team Lead | **Kaelin Kesavjee** | https://github.com/Kaelinkes |
 | Programmer | **Savannah David**| https://github.com/SBD1438 |
 | Programmer | **Emmanuel Ibekwe** | Coming Soon |
