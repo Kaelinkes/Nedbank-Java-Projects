@@ -63,6 +63,7 @@ Through these projects I aim to strengthen:
 ---
 
 ## Collaborators
+
 | Role | Name | GitHub |
 |-------|--------|-------------|--------|
 | Team Lead | **Kaelin Kesavjee** | https://github.com/Kaelinkes |
@@ -70,6 +71,7 @@ Through these projects I aim to strengthen:
 | Programmer | **Emmanuel Ibekwe** | Coming Soon |
 | Programmer | **Zach Chetty** | Coming Soon |
 | Programmer | **Rohin Harilal** | Coming Soon |
+
 ---
 
 ⭐ This repository is part of our journey toward becoming an **industry-ready IT empolyees**.
