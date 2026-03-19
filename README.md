@@ -1,7 +1,7 @@
 # Java Industry Projects
 
-This repository contains **three industry-oriented Java projects** completed as part of my academic development.  
-The projects are built in collaboration with a lecturer and are designed to simulate **real-world software development practices** while strengthening my **GitHub portfolio and industry readiness**.
+This repository contains **three industry-oriented Java projects** completed as part of our academic development.  
+The projects are built in collaboration with our lecturer and team members of "The Nedbank team"(A group/team created by our leacturer) and are designed to simulate **real-world software development practices** while strengthening our **GitHub portfolio and industry readiness**.
 
 ---
 
@@ -23,7 +23,7 @@ Each project will be developed step-by-step during guided sessions and refined t
 
 | Project | Name | Description | Status |
 |-------|--------|-------------|--------|
-| Project 1 | Industry Java project 1 | Coming Soon |Coming Soon |
+| Project 1 | Industry Java project 1 | Coming Soon |IN PROGRESS |
 | Project 2 | Industry Java project 2 | Coming Soon |Coming Soon |
 | Project 3 | Industry Java project 3 | Coming Soon |Coming Soon |
 
@@ -62,10 +62,10 @@ Through these projects I aim to strengthen:
 
 ---
 
-## Author
+## Collaborators
 
-**Kaelin Kesavjee**  
+**Kaelin Kesavjee**(Team Lead) , **Savannah David**, **Emmanuel Ibekwe**, **Zach Chetty** and **Rohin Harilal**.
 
 ---
 
-⭐ This repository is part of my journey toward becoming an **industry-ready software engineer**.
+⭐ This repository is part of our journey toward becoming an **industry-ready IT empolyees**.
