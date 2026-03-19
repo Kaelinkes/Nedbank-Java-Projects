@@ -1,7 +1,7 @@
 # Java Industry Projects
 
 This repository contains **three industry-oriented Java projects** completed as part of our academic development.  
-The projects are built in collaboration with our lecturer and team members of "The Nedbank team"(A group/team created by our leacturer) and are designed to simulate **real-world software development practices** while strengthening our **GitHub portfolio and industry readiness**.
+The projects are built in collaboration with our lecturer and team members of "**The Nedbank team**" (A group/team created by our leacturer) and are designed to simulate **real-world software development practices** while strengthening our **GitHub portfolio and industry readiness**.
 
 ---
 
