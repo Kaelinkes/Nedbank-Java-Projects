@@ -63,9 +63,13 @@ Through these projects I aim to strengthen:
 ---
 
 ## Collaborators
-
-**Kaelin Kesavjee**(Team Lead) , **Savannah David**, **Emmanuel Ibekwe**, **Zach Chetty** and **Rohin Harilal**.
-
+| Role | Name | GitHub |
+|-------|--------|-------------|--------|
+| Team Lead | **Kaelin Kesavjee** | https://github.com/Kaelinkes |
+| Programmer | **Savannah David**| https://github.com/SBD1438 |
+| Programmer | **Emmanuel Ibekwe** | Coming Soon |
+| Programmer | **Zach Chetty** | Coming Soon |
+| Programmer | **Rohin Harilal** | Coming Soon |
 ---
 
 ⭐ This repository is part of our journey toward becoming an **industry-ready IT empolyees**.
