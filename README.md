@@ -70,7 +70,7 @@ Through these projects I aim to strengthen:
 | Programmer | **Savannah David**| https://github.com/SBD1438 |
 | Programmer | **Emmanuel Ibekwe** | Coming Soon |
 | Programmer | **Zach Chetty** | Coming Soon |
-| Programmer | **Rohin Harilal** | Coming Soon |
+| Programmer | **Rohin Harilal** | https://github.com/RH0510 |
 
 ---
 
