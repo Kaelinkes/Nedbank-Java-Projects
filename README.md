@@ -68,7 +68,7 @@ Through these projects I aim to strengthen:
 |-------|--------|-------------|
 | Team Lead | **Kaelin Kesavjee** | https://github.com/Kaelinkes |
 | Programmer | **Savannah David**| https://github.com/SBD1438 |
-| Programmer | **Emmanuel Ibekwe** | Coming Soon |
+| Programmer | **Emmanuel Ibekwe** | https://github.com/nue77 |
 | Programmer | **Zach Chetty** | Coming Soon |
 | Programmer | **Rohin Harilal** | https://github.com/RH0510 |
 
