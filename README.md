@@ -58,7 +58,7 @@ Through these projects I aim to strengthen:
 
 ## Status
 
-🚧 Projects will be added progressively as they are completed.
+🚧 Projects will be added progressively as they are completed, check in to see progress.
 
 ---
 
