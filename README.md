@@ -21,11 +21,11 @@ Each project will be developed step-by-step during guided sessions and refined t
 
 ## Projects Included
 
-| Project | Name | Description | Status |
-|-------|--------|-------------|--------|
-| Project 1 | Industry Java project 1 | Coming Soon |IN PROGRESS |
-| Project 2 | Industry Java project 2 | Coming Soon |Coming Soon |
-| Project 3 | Industry Java project 3 | Coming Soon |Coming Soon |
+| Project | Name | Status |
+|-------|--------|--------|
+| Industry Java project 1 | Project 1 CLI Banking |IN PROGRESS |
+| Industry Java project 2  | Project 2 Data Pipeline |Coming Soon |
+|Industry Java project 3 | IProject 3 REST API |Coming Soon |
 
 Each project will have its own **folder**, documentation,READMEs and source code.
 
