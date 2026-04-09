@@ -25,7 +25,7 @@ Each project will be developed step-by-step during guided sessions and refined t
 |-------|--------|--------|
 | Industry Java project 1 | Project 1 CLI Banking |IN PROGRESS |
 | Industry Java project 2  | Project 2 Data Pipeline |Coming Soon |
-|Industry Java project 3 | IProject 3 REST API |Coming Soon |
+|Industry Java project 3 | Project 3 REST API |Coming Soon |
 
 Each project will have its own **folder**, documentation,READMEs and source code.
 
