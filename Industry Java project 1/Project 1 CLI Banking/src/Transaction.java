@@ -1,3 +1,42 @@
+/*
+        ===============================================
+                        TICKET 2
+        ===============================================
+
+ISSUES & THINGS TO FIX:
+
+1. Incorrect package name
+   - Required: banking.model
+   - Current: com.mycompany.transaction
+   - Fix: Change package to match specification
+   - Lines: 41
+
+2. Test main method should NOT be included
+   - Ticket only requires Transaction class
+   - Lines: ~144-154
+
+3. (Minor) Enum accessibility is correct but ensure it's public inside class
+   - Already correct, just clarify and confirm
+   - Lines: ~50-61
+
+4. (Minor) Formatting must EXACTLY match spec
+   - Spec: '[2024-03-15 14:32] DEPOSIT R 500.00 Balance: R 1500.00'
+   - Your format matches ✔ but spacing/capitalisation must remain exact (Good programming practice)
+   - Lines: ~121-141
+
+NOTE:
+Line numbers are approximate depending on IDE formatting.
+No fixes are applied below — only comments highlighting issues.
+
+COMMENTS & FEEDBACK:
+This class demonstrates a clean and reliable approach to handling financial records through immutability and well-structured data. 
+By ensuring that transactions cannot be modified after creation, it reflects real-world banking standards and audit requirements. 
+The use of enums, timestamps, and formatted output shows attention to both functionality and detail. 
+It’s a strong example of how good design choices lead to secure and maintainable code.
+Well done, exellent first attempt!
+*/
+
+
 package com.mycompany.transaction;
 //Declares the package (folder structure) where this class belongs
 
@@ -7,11 +46,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 //Imports DateTimeFormatter to control how the date/time is displayed
 
-/*
-        ===============================================
-                        TICKET 2
-        ===============================================
-*/
 
 public class Transaction {
 //This class represents a single bank transaction (like a receipt for deposit/withdrawal)
