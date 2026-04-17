@@ -1,136 +1,184 @@
-//Ticket 1
+// ==========================
+// Ticket 1
+// ==========================
 
-//The package tells java where this class belongs in the project
+/*
+ISSUES & THINGS TO FIX:
+
+1. Fields should be PRIVATE, not PROTECTED
+   - Current: protected accountNumber, ownerName, balance
+   - Fix: Change to private
+   - Lines: ~44–46
+
+2. Transaction list should NOT be List<String>
+   - Should use List<Transaction>
+   - You are storing Strings instead of proper objects
+   - Lines: ~52, ~91, ~132, ~166
+
+3. Getter name and type mismatch
+   - Current: getTransactionHistory() returns List<String>
+   - Should be: getTransactions() returning List<Transaction>
+   - Lines: ~180–182
+
+4. deposit() should CREATE a Transaction object
+   - Currently adding String messages instead
+   - Should instantiate Transaction class
+   - Lines: ~84–92
+
+5. deductFromBalance() should NOT print errors
+   - This method should only deduct balance
+   - Validation belongs in withdraw()
+   - Lines: ~120–130
+
+6. Missing package declaration
+   - Should be: package banking.model;
+   - Lines: Top of file (before imports)
+
+7. Extra classes included (not required for this ticket)
+   - SavingsAccount and Main should NOT be part of Ticket 1
+   - Lines: ~188 onwards
+
+8. Transaction class is missing entirely
+   - Required based on spec
+   - Affects: Entire transaction handling system (multiple locations)
+
+NOTE:
+Line numbers are approximate and may differ slightly depending on formatting/IDE.
+No fixes are applied below — only comments showing where issues are.
+
+COMMENTS & FEEDBACK: 
+This implementation builds a strong foundation for the entire system by correctly using an abstract class to model real-world banking behaviour.
+It shows a clear understanding of how to structure shared functionality while allowing flexibility for future account types.
+The use of validation, helper methods, and transaction tracking reflects thoughtful design.
+Overall, it sets a solid base that other parts of the project can confidently build on.
+Good first attempt, well done!
+*/
+
+
+// ❌ ISSUE 6: Missing package declaration here
+// Should be: package banking.model;
 
 import java.util.ArrayList;//stores and saves transactions
 import java.util.List;//this is the interface we will be using
 
 // ── Exception ─────────────────────────────────────────────────────────────────
-// Custom exception to handle cases where an account
-// does not have enough balance for a transaction
+// ⚠️ ISSUE 7: This should likely be in its own file, not inside this one
 class InsufficientFundsException extends Exception {
-    // Constructor that accepts a custom error message
-    // and passes it to the parent Exception class
     public InsufficientFundsException(String message) {
-        super(message);// This sends a message to the parent class
+        super(message);
     }
 }
 
 // ── Abstract class Here
-// ───────────────────────────────────────────────────────
 public abstract class BankAccount {
+
     /*
-     * public makes it assecible for other packages
-     * abstract - makes the class name exclusive(cannot be used again)
+     * ❌ ISSUE 1: These MUST be private, not protected
+     * Location: Fields section (~44–46)
      */
-    protected String accountNumber;// stores values
+    protected String accountNumber;
     protected String ownerName;
     protected double balance;
+
+    /*
+     * ❌ ISSUE 2: Should NOT be List<String>
+     * Should be List<Transaction>
+     * Location: (~52)
+     */
     private List<String> transactionHistory;
 
     // ── Constructor ───────────────────────────────────────────────────────────
     public BankAccount(String accountNumber, String ownerName, double balance) {
-        this.accountNumber = accountNumber;// assigns the value
+        this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = balance;
-        this.transactionHistory = new ArrayList<>();// initializes the list
-    }/*
-      * this constructor runs when the subclass calls it
-      */
+
+        // ✅ Correct initialization
+        this.transactionHistory = new ArrayList<>();
+    }
 
     // ── Abstract method ───────────────────────────────────────────────────────
     public abstract void withdraw(double amount) throws InsufficientFundsException;
-    /*
-     * doesnt require a body to function
-     * throws an exception error if the user doesent have enough funds available
-     * forces the subclass to use it
-     */
 
     // ── Deposit ───────────────────────────────────────────────────────────────
-    // Deposits a specified amount into the account
-    // Parameter: amount - the money to be added to the balance
     public void deposit(double amount) {
 
-        // Check that the deposit amount is positive
         if (amount > 0) {
 
-            // Add the amount to the current balance
             this.balance += amount;
 
-            // Record the transaction with details of the deposit and updated balance
+            /*
+             * ❌ ISSUE 4:
+             * You are adding a String instead of creating a Transaction object
+             * Should create new Transaction(...)
+             * Location: (~84–92)
+             */
             addTransaction("Deposited: R" + amount + " | New Balance: R" + this.balance);
 
-            // Confirm successful deposit to the user
             System.out.println("Deposit successful: R" + amount);
         } else {
-
-            // Handle invalid input where amount is zero or negative
             System.out.println("Error: Deposit amount must be greater than zero.");
         }
     }
 
-    // ── Print last 5 transactions (or all if fewer than 5) ────────────────────
-    // Prints a mini account statement showing recent transactions
+    // ── Print last 5 transactions ────────────────────
     public void printStatement() {
 
-        // Display account holder's name and account number
         System.out.println("--- Statement for: " + ownerName + " (" + accountNumber + ") ---");
 
-        // Check if there are no transactions recorded
         if (transactionHistory.isEmpty()) {
-
-            // Inform the user that no transactions exist
             System.out.println("No transactions found.");
-
         } else {
 
-            // Determine the starting index to show only the last 5 transactions
             int startIndex = Math.max(0, transactionHistory.size() - 5);
 
-            // Get a sublist of the most recent transactions
+            /*
+             * ❌ ISSUE 2 (again): Using List<String> instead of Transaction
+             * Location: (~91)
+             */
             List<String> recent = transactionHistory.subList(startIndex, transactionHistory.size());
 
-            // Loop through and print each recent transaction
             for (String transaction : recent) {
                 System.out.println(transaction);
             }
         }
 
-        // Display the current account balance
         System.out.println("--- Current Balance: R" + balance + " ---");
     }
 
     // ── Protected helpers ─────────────────────────────────────────────────────
 
-    // Deducts a specified amount from the account balance
-    // Used internally by subclasses or other methods (e.g., withdrawal)
     protected void deductFromBalance(double amount) {
 
-        // Check that the amount is valid and sufficient funds are available
+        /*
+         * ❌ ISSUE 5:
+         * This method should NOT handle validation or print errors
+         * It should ONLY deduct balance
+         * Location: (~120–130)
+         */
+
         if (amount > 0 && this.balance - amount >= 0) {
-
-            // Subtract the amount from the balance
             this.balance -= amount;
-
         } else {
-
-            // Handle invalid amount or insufficient balance
             System.out.println("Insufficient funds or invalid amount.");
         }
     }
 
-    // Adds a transaction record to the transaction history
-    // Used to log account activity such as deposits and withdrawals
     protected void addTransaction(String message) {
 
-        // Append the transaction message to the list
+        /*
+         * ❌ ISSUE 2 (again):
+         * Should be adding Transaction objects, not Strings
+         * Location: (~132)
+         */
         transactionHistory.add(message);
     }
 
     // ── Getters ───────────────────────────────────────────────────────────────
+
     public String getAccountNumber() {
         return accountNumber;
-    }// provides safer
+    }
 
     public String getOwnerName() {
         return ownerName;
@@ -140,95 +188,83 @@ public abstract class BankAccount {
         return balance;
     }
 
+    /*
+     * ❌ ISSUE 3:
+     * Wrong name and wrong type
+     * Should be getTransactions() returning List<Transaction>
+     * Location: (~180–182)
+     */
     public List<String> getTransactionHistory() {
         return transactionHistory;
     }
 
-} // ← BankAccount closes here -> subclass follows right underneath it
-  // (SavingsAccount)
+} // ← BankAccount ends here
 
-// ── Subclass
-// ──────────────────────────────────────────────────────────────────
 
-// SavingsAccount inherits from BankAccount and provides
-// a specific implementation for withdrawals
+// ── Subclass ──────────────────────────────────────────────────────────────────
+
+/*
+ * ❌ ISSUE 7:
+ * This class should NOT be in this ticket/file
+ * Ticket 1 only requires BankAccount
+ * Location: (~188 onwards)
+ */
 class SavingsAccount extends BankAccount {
 
-    // Stores the initial balance when the account was created
     private final double initialBalance;
 
-    // Constructor to initialize account details and initial balance
     public SavingsAccount(String accountNumber, String ownerName, double initialBalance) {
-
-        // Call the parent class constructor
         super(accountNumber, ownerName, initialBalance);
-
-        // Store the initial balance separately
         this.initialBalance = initialBalance;
     }
 
-    // Override the abstract withdraw method from BankAccount
-    @Override // withdraw is declared abstract in BankAccount, so it must be implemented here
+    @Override
     public void withdraw(double amount) throws InsufficientFundsException {
 
-        // Validate that the withdrawal amount is positive
         if (amount <= 0) {
             throw new InsufficientFundsException("Withdrawal amount must be positive.");
         }
 
-        // Check if there are enough funds in the account
         if (amount > this.balance) {
             throw new InsufficientFundsException(
                     "Insufficient funds. Available balance: R" + this.balance);
         }
 
-        // Deduct the amount from the balance using a helper method
         deductFromBalance(amount);
 
-        // Record the transaction with updated balance
         addTransaction("Withdrawn: R" + amount + " | New Balance: R" + this.balance);
 
-        // Confirm successful withdrawal to the user
         System.out.println("Withdrawal successful: R" + amount);
     }
 
-    // Getter method to retrieve the initial balance
     public double getInitialBalance() {
         return initialBalance;
     }
 
-} // ← SavingsAccount class ends here
+}
 
-// ── Entry Point
-// ───────────────────────────────────────────────────────────────
+
+// ── Entry Point ───────────────────────────────────────────────────────────────
+
+/*
+ * ❌ ISSUE 7:
+ * Main class should NOT be part of this ticket
+ */
 class Main {
 
-    // Main method: program execution starts here
     public static void main(String[] args) {
 
-        // Create a new SavingsAccount with account number, owner name, and initial
-        // balance
         SavingsAccount account = new SavingsAccount("ACC001", "Emmanuel/Zack", 1000.00);
 
-        // Deposit money into the account
         account.deposit(500.00);
 
         try {
-
-            // Attempt a valid withdrawal
             account.withdraw(200.00);
-
-            // Attempt a withdrawal that exceeds the balance
-            // This is expected to throw an InsufficientFundsException
             account.withdraw(5000.00);
-
         } catch (InsufficientFundsException e) {
-
-            // Handle the exception and display an error message
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Print the account statement, including recent transactions and balance
         account.printStatement();
     }
 }
